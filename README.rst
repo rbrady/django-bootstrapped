@@ -33,7 +33,13 @@ Configuration
 
 Template Usage
 =================
+This application exposes a few template tags for including the Bootstrap toolkit files.
+
+Load the template tags before usage::
+    {% load bootstrap %}
 
 TODO: Explain each template tag and all permutations.
+
+
 
 TODO: Explain how to customize/override using less.
