@@ -53,7 +53,8 @@ Output::
 `bootstrap_js`
 
 The Bootstrap toolkit provides some javascript love (http://twitter.github.com/bootstrap/#javascript) that is
-compatible with jQuery and Ender.  This tag renders the appropriate script include tag for each plugin defined.
+compatible with jQuery and Ender.  This tag renders the appropriate script include tag for each plugin defined.  The tag
+does not include jQuery or Ender, that's up to you.
 
     {% bootstrap_js modal alerts dropdown %}
 
@@ -63,8 +64,24 @@ Output::
     <script src="bootstrap-dropdown.js" type="text/javascript"></script>
     <script src="bootstrap-modal.js" type="text/javascript"></script>
 
+* Note: The popover javascript file has a dependency on the twipsy file.  If you add popover to the list and forget to
+add twipsy, the tag will do it for you.
+
+Alternatively, you may just want to include all of the scripts.  If so, just use `all` for the tag arguments.
+
+    {% bootstrap_js all %}
 
 
+`bootstrap_custom_less`
 
+You may want to customize the output of the bootstrap.css using Less (http://lesscss.org/).  Bootstrap was built from
+Preboot, an open-source pack of mixins and variables to be used in conjunction with Less, a CSS preprocessor for faster
+and easier web development.  This tag accepts an argument for a file path somewhere in your /static/ root directory and
+outputs a script tag for it.
 
-TODO: Explain how to customize/override using less.
+    {% bootstrap_custom_less "lib/bootstrap_custom.less" %}
+
+Output::
+
+    <link rel="stylesheet/less" type="text/css" href="/static/lib/bootstrap_custom.less" media="all">
+    <script src="/static/js/less-1.1.5.min.js" type="text/javascript"></script>
