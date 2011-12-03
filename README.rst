@@ -64,15 +64,14 @@ Output::
     <script src="bootstrap-dropdown.js" type="text/javascript"></script>
     <script src="bootstrap-modal.js" type="text/javascript"></script>
 
-* Note: The popover javascript file has a dependency on the twipsy file.  If you add popover to the list and forget to
-add twipsy, the tag will do it for you.
+* Note: The popover javascript file has a dependency on the twipsy file.  If you add popover to the list and forget to add twipsy, the tag will do it for you.
 
 Alternatively, you may just want to include all of the scripts.  If so, just use `all` for the tag arguments.
 
     {% bootstrap_js all %}
 
 
-`bootstrap_custom_less`
+```bootstrap_custom_less```
 
 You may want to customize the output of the bootstrap.css using Less (http://lesscss.org/).  Bootstrap was built from
 Preboot, an open-source pack of mixins and variables to be used in conjunction with Less, a CSS preprocessor for faster
