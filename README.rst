@@ -42,7 +42,7 @@ Load the template tags before usage::
 ```bootstrap_css```
 
 This tag renders the link tag for the bootstrap.min.css file.  It will render the un-minified version if
-settings.TEMPLATE_DEBUG is set to True.::
+settings.TEMPLATE_DEBUG is set to True::
 
     {% bootstrap_css %}
 
@@ -54,7 +54,7 @@ Output::
 
 The Bootstrap toolkit provides some javascript love (http://twitter.github.com/bootstrap/#javascript) that is
 compatible with jQuery and Ender.  This tag renders the appropriate script include tag for each plugin defined.  The tag
-does not include jQuery or Ender, that's up to you.
+does not include jQuery or Ender, that's up to you::
 
     {% bootstrap_js modal alerts dropdown %}
 
@@ -66,7 +66,7 @@ Output::
 
 * Note: The popover javascript file has a dependency on the twipsy file.  If you add popover to the list and forget to add twipsy, the tag will do it for you.
 
-Alternatively, you may just want to include all of the scripts.  If so, just use `all` for the tag arguments.:
+Alternatively, you may just want to include all of the scripts.  If so, just use `all` for the tag arguments::
 
     {% bootstrap_js all %}
 
@@ -77,7 +77,7 @@ Alternatively, you may just want to include all of the scripts.  If so, just use
 You may want to customize the output of the bootstrap.css using Less (http://lesscss.org/).  Bootstrap was built from
 Preboot, an open-source pack of mixins and variables to be used in conjunction with Less, a CSS preprocessor for faster
 and easier web development.  This tag accepts an argument for a file path somewhere in your /static/ root directory and
-outputs a script tag for it.:
+outputs a script tag for it::
 
     {% bootstrap_custom_less "lib/bootstrap_custom.less" %}
 
