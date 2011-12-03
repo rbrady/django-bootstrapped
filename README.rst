@@ -39,7 +39,31 @@ Load the template tags before usage::
 
     {% load bootstrap %}
 
-TODO: Explain each template tag and all permutations.
+`bootstrap_css`
+
+This tag renders the link tag for the bootstrap.min.css file.  It will render the un-minified version if
+settings.TEMPLATE_DEBUG is set to True.::
+
+    {% bootstrap_css %}
+
+Output::
+
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.css">
+
+`bootstrap_js`
+
+The Bootstrap toolkit provides some javascript love (http://twitter.github.com/bootstrap/#javascript) that is
+compatible with jQuery and Ender.  This tag renders the appropriate script include tag for each plugin defined.
+
+    {% bootstrap_js modal alerts dropdown %}
+
+Output::
+
+    <script src="bootstrap-alerts.js" type="text/javascript"></script>
+    <script src="bootstrap-dropdown.js" type="text/javascript"></script>
+    <script src="bootstrap-modal.js" type="text/javascript"></script>
+
+
 
 
 
