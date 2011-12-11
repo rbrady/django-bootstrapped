@@ -3,7 +3,7 @@ from django.conf import settings
 
 register = template.Library()
 
-SCRIPT_TAG = '<script src="%sjs/bootstrap-%s.js" type="text/javascript"></script>' % settings.STATIC_URL
+SCRIPT_TAG = '<script src="%sjs/bootstrap-%s.js" type="text/javascript"></script>'
 
 class BootstrapJSNode(template.Node):
 
@@ -12,14 +12,14 @@ class BootstrapJSNode(template.Node):
 
     def render_all_scripts(self):
         results = [
-            SCRIPT_TAG % 'alerts',
-            SCRIPT_TAG % 'buttons',
-            SCRIPT_TAG % 'dropdown',
-            SCRIPT_TAG % 'modal',
-            SCRIPT_TAG % 'popover',
-            SCRIPT_TAG % 'scrollspy',
-            SCRIPT_TAG % 'tabs',
-            SCRIPT_TAG % 'twipsy',
+            SCRIPT_TAG % (settings.STATIC_URL, 'alerts'),
+            SCRIPT_TAG % (settings.STATIC_URL, 'buttons'),
+            SCRIPT_TAG % (settings.STATIC_URL, 'dropdown'),
+            SCRIPT_TAG % (settings.STATIC_URL, 'modal'),
+            SCRIPT_TAG % (settings.STATIC_URL, 'popover'),
+            SCRIPT_TAG % (settings.STATIC_URL, 'scrollspy'),
+            SCRIPT_TAG % (settings.STATIC_URL, 'tabs'),
+            SCRIPT_TAG % (settings.STATIC_URL, 'twipsy'),
         ]
         return '\n'.join(results)
 
@@ -30,7 +30,7 @@ class BootstrapJSNode(template.Node):
             # popover requires twipsy
             if 'popover' in self.args:
                 self.args.add('twipsy')
-            tags = [SCRIPT_TAG % tag for tag in self.args]
+            tags = [SCRIPT_TAG % (settings.STATIC_URL,tag) for tag in self.args]
             return '\n'.join(tags)
 
 @register.simple_tag
