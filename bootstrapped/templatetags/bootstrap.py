@@ -3,7 +3,7 @@ from django.conf import settings
 
 register = template.Library()
 
-SCRIPT_TAG = '<script src="bootstrap-%s.js" type="text/javascript"></script>'
+SCRIPT_TAG = '<script src="%sjs/bootstrap-%s.js" type="text/javascript"></script>' % settings.STATIC_URL
 
 class BootstrapJSNode(template.Node):
 
