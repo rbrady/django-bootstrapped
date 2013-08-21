@@ -85,3 +85,5 @@ Output::
 
     <link rel="stylesheet/less" type="text/css" href="/static/lib/bootstrap_custom.less" media="all">
     <script src="/static/js/less-1.1.5.min.js" type="text/javascript"></script>
+
+Note:
