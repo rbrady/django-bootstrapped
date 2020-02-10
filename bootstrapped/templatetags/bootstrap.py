@@ -58,5 +58,5 @@ def bootstrap_less():
 
 @register.tag(name='bootstrap_js')
 def do_bootstrap_js(parser, token):
-    print '\n'.join(token.split_contents())
+    print ('\n'.join(token.split_contents()))
     return BootstrapJSNode(token.split_contents()[1:])
